@@ -1,0 +1,796 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>IELTS 30 kunlik reja</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=Instrument+Sans:wght@400..600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+/* Layout concept: an answer-sheet record. One narrow column, ruled rows, bubble checkboxes, red marking pen reserved for today and the exam date. */
+:root{
+  --paper:#EEF2F5; --surface:#FFFFFF; --ink:#0F1C2B; --ink2:#4B5B6C; --rule:#CAD5DE;
+  --pen:#C0392B; --pen-ink:#FFFFFF;
+  --L:#2B6CB0; --R:#2F855A; --W:#A8691A; --S:#6D5A9C;
+  --good:#2F855A; --warn:#A8691A;
+  --f-display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --f-body:"Instrument Sans","Segoe UI",system-ui,sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0D1620; --surface:#15212D; --ink:#E7EEF4; --ink2:#9EB0C1; --rule:#2A3A4A;
+    --pen:#F07563; --pen-ink:#1A0F0D;
+    --L:#74ABEA; --R:#62C08F; --W:#E3AC52; --S:#AB98D9;
+    --good:#62C08F; --warn:#E3AC52;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0D1620; --surface:#15212D; --ink:#E7EEF4; --ink2:#9EB0C1; --rule:#2A3A4A;
+  --pen:#F07563; --pen-ink:#1A0F0D;
+  --L:#74ABEA; --R:#62C08F; --W:#E3AC52; --S:#AB98D9;
+  --good:#62C08F; --warn:#E3AC52;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{
+  background:var(--paper); color:var(--ink); font-family:var(--f-body); font-size:15px; line-height:1.55;
+  padding-block:0 48px;
+  padding-left:max(16px,env(safe-area-inset-left,0px)); padding-right:max(16px,env(safe-area-inset-right,0px));
+}
+.wrap{max-width:760px;margin:0 auto}
+h1,h2,h3{font-family:var(--f-display);margin:0;text-wrap:balance;line-height:1.15}
+p{margin:0}
+button{font:inherit;color:inherit;cursor:pointer}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.eyebrow{font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink2);font-weight:600}
+
+/* top */
+.top{padding:22px 0 14px;display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap}
+.top h1{font-size:clamp(34px,8vw,52px);font-weight:800;letter-spacing:-.02em}
+.top h1 em{font-style:normal;color:var(--pen)}
+.stat{text-align:right;min-width:0}
+.stat .mono{font-size:22px;display:block}
+.stat .lbl{font-size:12px;color:var(--ink2)}
+
+/* tabs */
+.tabs{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--paper);border-bottom:2px solid var(--ink);display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;margin-inline:calc(-1 * max(16px,env(safe-area-inset-left,0px)));padding-inline:max(16px,env(safe-area-inset-left,0px))}
+.tabs::-webkit-scrollbar{display:none}
+.tab{background:none;border:0;padding:12px 14px 10px;font-weight:600;color:var(--ink2);white-space:nowrap;border-bottom:3px solid transparent;margin-bottom:-2px}
+.tab[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--pen)}
+.tab:focus-visible,.btn:focus-visible,.row:focus-visible,summary:focus-visible{outline:3px solid var(--pen);outline-offset:2px}
+
+main{padding-top:20px;display:grid;gap:22px}
+
+/* day header */
+.daybar{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.btn{background:var(--surface);border:1.5px solid var(--ink);border-radius:4px;padding:7px 12px;font-weight:600;font-size:14px}
+.btn:hover{background:var(--ink);color:var(--paper)}
+.btn.ghost{border-color:var(--rule)}
+.daytitle{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.daytitle h2{font-size:clamp(26px,6vw,34px);font-weight:800}
+.daytitle .date{color:var(--ink2);font-weight:500}
+.pill{display:inline-block;font-size:12px;font-weight:600;padding:3px 9px;border:1.5px solid var(--ink2);border-radius:99px;color:var(--ink2)}
+.pill.pen{border-color:var(--pen);color:var(--pen)}
+.pill.good{border-color:var(--good);color:var(--good)}
+.phase{color:var(--ink2);font-size:14px}
+
+.meter{display:grid;gap:8px}
+.meter-top{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:baseline}
+.meter-top .mono{font-size:20px}
+.track{height:10px;background:var(--rule);border-radius:99px;overflow:hidden}
+.fill{height:100%;background:var(--ink);border-radius:99px;transition:width .25s}
+@media (prefers-reduced-motion:reduce){.fill{transition:none}}
+
+.sched{display:grid;gap:0;border:1.5px solid var(--ink);background:var(--surface);border-radius:4px}
+.sched div{display:grid;grid-template-columns:auto 1fr auto;gap:12px;padding:9px 12px;align-items:center;border-top:1px solid var(--rule)}
+.sched div:first-child{border-top:0}
+.sched .tm{font-family:var(--f-mono);font-size:13px;white-space:nowrap}
+.sched .sk{font-weight:600;min-width:0}
+.sched .du{color:var(--ink2);font-size:13px;white-space:nowrap}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:8px;background:var(--c)}
+
+.sec{background:var(--surface);border:1.5px solid var(--ink);border-radius:4px;padding:14px 14px 4px;--c:var(--ink)}
+.sec.L{--c:var(--L)} .sec.R{--c:var(--R)} .sec.W{--c:var(--W)} .sec.S{--c:var(--S)}
+.sec-h{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-bottom:6px}
+.sec-h h3{font-size:19px;font-weight:700;display:flex;align-items:center;gap:10px}
+.chip{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:4px;background:var(--c);color:var(--surface);font-family:var(--f-mono);font-size:13px}
+.sec-h .du{color:var(--ink2);font-size:13px}
+.task{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:12px;align-items:start;padding:11px 0;border-top:1px solid var(--rule);cursor:pointer}
+.task input{appearance:none;-webkit-appearance:none;width:22px;height:22px;border:2px solid var(--ink2);border-radius:50%;margin:1px 0 0;display:grid;place-content:center;cursor:pointer;background:transparent}
+.task input::before{content:"";width:12px;height:12px;border-radius:50%;background:var(--c);transform:scale(0);transition:transform .12s}
+.task input:checked{border-color:var(--c)}
+.task input:checked::before{transform:scale(1)}
+.task input:focus-visible{outline:3px solid var(--pen);outline-offset:2px}
+.task .tt{min-width:0}
+.task .prio{display:inline-block;font-size:10px;line-height:1.5;font-weight:800;letter-spacing:.04em;border-radius:5px;padding:2px 6px;margin:0 6px 3px 0;vertical-align:1px;white-space:nowrap}
+.task .prio.p1{background:#fce8a4;color:#604600;border:1px solid #e4c65d}
+.task .prio.p2{background:var(--soft);color:var(--ink2);border:1px solid var(--rule)}
+.task .mm{font-family:var(--f-mono);font-size:13px;color:var(--ink2);white-space:nowrap;padding-top:2px}
+.task.done .tt{color:var(--ink2);text-decoration:line-through;text-decoration-color:var(--rule)}
+
+.note{border-left:3px solid var(--pen);padding:2px 0 2px 12px;color:var(--ink2);font-size:14px}
+.habits{background:var(--surface);border:1.5px solid var(--ink);border-radius:4px;padding:14px 14px 4px;--c:var(--pen)}
+.habits h3{font-size:17px;margin-bottom:4px}
+textarea{width:100%;font:inherit;background:var(--surface);color:var(--ink);border:1.5px solid var(--ink2);border-radius:4px;padding:10px;resize:vertical;min-height:64px}
+label.f{display:grid;gap:6px;font-weight:600;font-size:14px}
+
+.backup-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.backup-actions .btn{font-size:12px;padding:7px 10px}
+/* plan list */
+.ph{display:grid;gap:2px;margin-top:6px}
+.ph h3{font-size:20px;font-weight:700}
+.ph p{color:var(--ink2);font-size:14px}
+.list{border:1.5px solid var(--ink);background:var(--surface);border-radius:4px}
+.row{display:grid;grid-template-columns:44px minmax(0,1fr) auto;gap:12px;align-items:center;padding:10px 12px;border-top:1px solid var(--rule);width:100%;background:none;border-left:0;border-right:0;border-bottom:0;text-align:left;color:inherit}
+.row:first-child{border-top:0}
+.row:hover{background:var(--paper)}
+.row.today{box-shadow:inset 4px 0 0 var(--pen)}
+.row .n{font-family:var(--f-display);font-weight:800;font-size:22px}
+.row .d{display:grid;gap:5px;min-width:0}
+.row .d b{font-weight:600}
+.row .d span{color:var(--ink2);font-size:13px}
+.row .h{font-family:var(--f-mono);font-size:13px;color:var(--ink2);white-space:nowrap}
+.mini{height:5px;background:var(--rule);border-radius:99px;overflow:hidden}
+.mini i{display:block;height:100%;background:var(--ink)}
+
+/* text blocks */
+.card{background:var(--surface);border:1.5px solid var(--ink);border-radius:4px;padding:16px;display:grid;gap:10px}
+.card h2{font-size:24px;font-weight:800}
+.card h3{font-size:18px;font-weight:700}
+.card ul,.card ol{margin:0;padding-left:20px;display:grid;gap:6px}
+.card p{max-width:65ch}
+details{border-top:1px solid var(--rule);padding:10px 0}
+details:first-of-type{border-top:0}
+summary{font-weight:600;cursor:pointer;padding:4px 0}
+details > *:not(summary){margin-top:8px}
+.tw{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:520px;font-size:14px}
+th,td{border-bottom:1px solid var(--rule);padding:9px 8px;text-align:left}
+th{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink2)}
+td.mono,th.mono{text-align:center}
+input[type=number]{width:64px;font:inherit;font-family:var(--f-mono);background:var(--paper);color:var(--ink);border:1.5px solid var(--ink2);border-radius:4px;padding:6px 4px;text-align:center}
+.ovr{font-family:var(--f-display);font-weight:800;font-size:20px;text-align:center}
+.gauge{position:relative;height:34px;margin:22px 0 28px}
+.gauge .gt{position:absolute;left:0;right:0;top:14px;height:6px;background:var(--rule);border-radius:99px}
+.gauge .mk{position:absolute;top:8px;width:18px;height:18px;margin-left:-9px;border-radius:50%;border:3px solid var(--ink);background:var(--paper)}
+.gauge .mk.on{background:var(--ink)}
+.gauge .tg{position:absolute;top:0;bottom:0;width:2px;background:var(--pen)}
+.gauge .tl{position:absolute;top:-18px;transform:translateX(-50%);font-size:12px;color:var(--pen);font-weight:600;white-space:nowrap}
+.gauge .sc{position:absolute;top:30px;font-size:11px;color:var(--ink2);transform:translateX(-50%)}
+.q{color:var(--ink2);font-size:14px}
+</style>
+
+<div class="wrap">
+  <header class="top" id="top"></header>
+  <nav class="tabs" id="tabs" role="tablist" aria-label="Bo'limlar"></nav>
+  <main id="app"></main>
+</div>
+
+<script>
+(function(){
+"use strict";
+
+/* ---------- dates ---------- */
+var WD=["Yak","Dush","Sesh","Chor","Pay","Jum","Shan"];
+var MON=["yan","fev","mar","apr","may","iyn","iyl","avg","sen","okt","noy","dek"];
+var D0=Date.UTC(2026,9,19), DEXAM=Date.UTC(2026,10,19);
+var MOCKS={6:"m1",13:"m2",20:"m3",27:"m4"};
+var SK={L:"Listening",R:"Reading",W:"Writing",S:"Speaking",M:"Mock"};
+function dateOf(n){return new Date(D0+(n-1)*864e5);}
+function dlabel(n){var d=dateOf(n);return d.getUTCDate()+"-"+MON[d.getUTCMonth()];}
+function wdl(n){return WD[dateOf(n).getUTCDay()];}
+function todayUTC(){
+  var s=new Intl.DateTimeFormat("en-CA",{timeZone:"Asia/Tashkent"}).format(new Date()).split("-").map(Number);
+  return Date.UTC(s[0],s[1]-1,s[2]);
+}
+function todayNum(){return Math.round((todayUTC()-D0)/864e5)+1;}
+function daysLeft(){return Math.max(0,Math.round((DEXAM-todayUTC())/864e5));}
+function pad(x){return (x<10?"0":"")+x;}
+function hhmm(x){return pad(Math.floor(x/60))+":"+pad(x%60);}
+function fmt(m){var h=Math.floor(m/60),mm=m%60;if(!h)return mm+" daq";return mm?h+" soat "+mm+" daq":h+" soat";}
+function fmtH(m){return (Math.round(m/6)/10).toString().replace(".",",")+" soat";}
+
+/* ---------- plan data ---------- */
+var LMAIN=[null,
+"Part 3 MCQ (1 ta): savollarni oldindan o'qing, har variantdan kalit so'zni chizib qo'ying",
+"Part 4 (1 ta): bo'sh joyga javob turini (son, ot, sifat) tinglashdan oldin taxmin qiling",
+"Part 3 matching (1 ta): ro'yxatdagi so'zlarni sinonimga aylantirib o'qing",
+"Part 3 + Part 4 (bir testdan), ikkalasini ketma-ket",
+"Part 4 (2 ta): yozish tezligi va imlo, so'z cheklovini (NO MORE THAN...) tekshiring",
+null,
+"Part 3 MCQ (2 ta): fikr o'zgaradigan joylar (but, actually, in fact) ustida ishlang",
+"Part 4 (2 ta): akademik ma'ruza, signal so'zlar (firstly, however, as a result)",
+"Part 3 matching va diagram (2 ta)",
+"Section 3 + Section 4 ketma-ket, haqiqiy vaqt bilan, to'xtatmasdan",
+"Part 3 (2 ta): xato daftaridagi eng ko'p xato turi bo'yicha",
+"Part 4 (2 ta): ikkinchi marta 1,25x tezlikda ham tinglang",
+null,
+"Part 3 MCQ (2 ta): har savolda boshqa variantlar nega noto'g'ri ekanini yozing",
+"Part 4 (2 ta): ko'plik/birlik va imlo xatolarisiz",
+"Section 3 + 4 (bir test), keyin xatolarni turlarga bo'lib sanang",
+"Part 3 matching + MCQ aralash (2 ta)",
+"Part 4 (2 ta) + Section 1-2 tezkor, maqsad: xatosiz",
+"Section 3 + 4 vaqt bilan, maqsad: 14/20 dan yuqori",
+null,
+"Part 3 (2 ta): eng ko'p xato turingiz bo'yicha",
+"Part 4 (2 ta): tez va tuzoqsiz",
+"Section 3 + 4, faqat 1 marta tinglash (imtihondagidek)",
+"To'liq Listening testi (40 savol)",
+"Xato daftaridan 3 ta eng zaif tur (Section 3/4)",
+"To'liq Listening testi (40 savol)",
+null,
+"Section 3 + 4, faqat 1 marta tinglash, vaqt bilan",
+"To'liq Listening testi, imtihon sharoitida",
+null,null];
+
+var RMAIN=[null,
+"T/F/NG texnikasi: 1 ta passage. Har javobga dalil jumlasini qalamda belgilang",
+"Matching headings (1 ta): avval har paragraf g'oyasini 3 so'zda yozing",
+"Passage 2 (1 ta) 20 daqiqada: skim + savol turi bo'yicha",
+"Matching information va names (1 ta): kalit so'z sinonimlari",
+"Passage 3 (1 ta) 20 daqiqada",
+null,
+"T/F/NG (2 ta passage), faqat shu savol turi",
+"Matching headings (2 ta)",
+"Passage 2 + Passage 3 ketma-ket (40 daqiqa)",
+"Matching features/names (2 ta)",
+"T/F/NG (2 ta): xato daftaridagi turlar bilan",
+"Passage 2 + 3 (40 daqiqa)",
+null,
+"T/F/NG (2 ta): NOT GIVEN va FALSE farqiga e'tibor bering",
+"Matching headings + information (2 ta)",
+"To'liq Reading testi (60 daqiqa)",
+"Passage 3 (2 ta): har paragrafga bir jumlalik xulosa yozing",
+"T/F/NG + matching aralash (2 ta passage)",
+"Passage 2 + 3 vaqt bilan, maqsad: 12+ to'g'ri",
+null,
+"Eng ko'p xato turingiz bo'yicha 2 ta passage",
+"Passage 3 (2 ta)",
+"T/F/NG + matching headings (2 ta passage)",
+"To'liq Reading testi (60 daqiqa)",
+"Xato daftaridan 3 ta eng zaif tur, har biridan 1 passage",
+"To'liq Reading testi (60 daqiqa)",
+null,
+"Passage 2 + 3 vaqt bilan",
+"To'liq Reading testi, imtihon sharoitida",
+null,null];
+
+var WMAIN=[null,
+"Task 2 shabloni (Texnika bo'limi). 1 ta body paragrafni PEEL bo'yicha yozing, keyin ikkinchisini",
+"Opinion savoli: 5 daqiqa reja, 2 ta body paragraf (jami 25 daqiqa)",
+"Opinion savoli: to'liq insho, vaqtsiz, shablon bo'yicha",
+"Discussion savoli: reja + to'liq insho, 50 daqiqa",
+"Advantages/Disadvantages: reja + insho, 50 daqiqa",
+null,
+"Problem/Solution: reja + insho, 50 daqiqa",
+"Two-part savol: reja + insho, 45 daqiqa",
+"Opinion: reja + insho, 45 daqiqa",
+"Discussion: reja + insho, 45 daqiqa",
+"Advantages/Disadvantages: 45 daqiqa",
+"Problem/Solution: 45 daqiqa",
+null,
+"Opinion (agree/disagree): 40 daqiqa",
+"Two-part savol: 40 daqiqa",
+"Discussion: 40 daqiqa",
+"Advantages/Disadvantages: 40 daqiqa",
+"Problem/Solution: 40 daqiqa",
+"Tasodifiy savol turi: 40 daqiqa",
+null,
+"Tasodifiy savol turi: 40 daqiqa",
+"Tasodifiy savol turi: 40 daqiqa",
+"Tasodifiy savol turi: 40 daqiqa",
+"Tasodifiy savol turi: 40 daqiqa",
+"Eng zaif savol turi: 40 daqiqa",
+"Tasodifiy savol turi: 40 daqiqa",
+null,
+"Tasodifiy savol turi: 40 daqiqa",
+"Tasodifiy savol turi, imtihon sharoitida: 40 daqiqa",
+null,null];
+
+var SMAIN=[null,
+"Part 2: 2 ta cue card (1 daq tayyorlanish + 2 daq gapirish), ovozga yozing",
+"Part 2: 2 ta cue card. Tuzilma: kim/qayerda, nima bo'ldi, nega muhim",
+"Part 3: 6 savol, har javob: fikr + sabab + misol (20-30 soniya)",
+"Part 1 (8 savol, 15 soniyadan) + Part 2 (1 ta)",
+"Part 2 (2 ta) + Part 3 (4 savol), bir mavzuda",
+null,
+"Part 2 (2 ta): ikkinchi urinish, birinchi yozuvdagi xatolarni tuzatib",
+"Part 3 (8 savol): qarama-qarshi fikr (however, on the other hand) qo'shing",
+"To'liq Speaking (Part 1-2-3), AI yoki o'qituvchi bilan",
+"Part 2 (2 ta) + tayyor namuna videosi bilan shadowing 15 daqiqa",
+"Part 3 (8 savol): yangi mavzular",
+"To'liq Speaking, yozib olib tahlil qiling",
+null,
+"Part 2 (3 ta): ikkinchi urinish bilan",
+"Part 3 (8 savol): sabab + misol + natija",
+"To'liq Speaking mock (AI yoki do'st bilan)",
+"Part 2 (2 ta): o'tgan zamon va present perfect ustida",
+"Part 3 (8 savol): qiyin mavzular (jamiyat, texnologiya, ta'lim)",
+"To'liq Speaking mock",
+null,
+"Part 2 (3 ta): vaqt bilan, to'xtamasdan",
+"Part 3 (8 savol): 25-30 soniyali javoblar",
+"To'liq Speaking mock",
+"Part 2 (3 ta) + Part 3 (6 savol)",
+"Eng zaif part bo'yicha 3 ta urinish",
+"To'liq Speaking mock",
+null,
+"Part 2 (2 ta) + Part 3 (6 savol)",
+"To'liq Speaking mock, imtihon formatida",
+null,null];
+
+var FR={L:[.5,.3],R:[.52,.33],W:[.5,.33],S:[.45,.3]};
+function r5(x){return Math.round(x/5)*5;}
+
+function wakeOf(n){return n<=19?390:(n<=26?360:330);}
+function phaseOf(n){
+  if(n<=6)return {i:1,t:"1-bosqich: texnika va diagnostika",d:"Savol turlarining texnikasini o'rganing va asosiy xato turlarini aniqlang."};
+  if(n<=19)return {i:2,t:"2-bosqich: zaif turlarni yopish",d:"Har kuni eng zaif savol turlari, vaqt bilan."};
+  if(n<=29)return {i:3,t:"3-bosqich: imtihon sharoiti",d:"To'liq testlar, imtihon vaqti va tartibi bilan."};
+  return {i:4,t:"4-bosqich: yengillash",d:"Yangi narsa o'rganmang, xato daftarini takrorlang, uxlang."};
+}
+
+var cache={};
+function mk(n){
+  if(cache[n])return cache[n];
+  var kind=(n%2===1)?"mock":"day";
+  var m;
+  if(kind==="rest")m={L:20,R:20,W:20,S:30};
+  else if(kind==="light")m={L:45,R:45,W:45,S:45};
+  else if(kind==="mock")m={L:90,R:110,W:90,S:60};
+  else if(n<=3)m={L:80,R:70,W:60,S:60};
+  else if(n%7===4)m={L:90,R:80,W:70,S:60};
+  else if(n<=11)m={L:120,R:105,W:90,S:75};
+  else m={L:130,R:110,W:100,S:80};
+  var T={L:[],R:[],W:[],S:[]};
+  if(kind==="day"){
+    var MAIN={L:LMAIN[n],R:RMAIN[n],W:WMAIN[n],S:SMAIN[n]};
+    var AN={
+      L:"Xatolar tahlili: har xato uchun dalil joyini transkriptda toping, sababini yozing (lug'at, e'tibor, tuzoq yoki tezlik)",
+      R:"Xatolar tahlili: dalil jumlani toping, nega adashganingizni yozing, xatolarni savol turi bo'yicha sanang",
+      W:"Band 7 namuna bilan solishtiring: 3 ta ibora va 1 ta g'oyani olib, yozganingizni qayta yozing",
+      S:"Yozuvni qayta tinglang (pauza, takror, grammatik xato), bitta xato turini tuzatib qayta yozing"
+    };
+    var EX={
+      L:"Dictation yoki shadowing + 10 ta yangi so'z/ibora (xato daftariga)",
+      R:"Maqola o'qing, 8-10 ta yangi so'z/ibora ajrating",
+      W:(n%3===0)?"Task 1: overview va 1 ta body paragraf (grafik yoki jadval)":"Mavzu lug'ati: 8 ta collocation + 2 ta tayyor g'oya (ta'lim, sog'liq, texnologiya...)",
+      S:"10 ta chunk/collocation o'rganing, 5 tasini bugun gapda ishlating"
+    };
+    ["L","R","W","S"].forEach(function(k){
+      var a=r5(m[k]*FR[k][0]),b=r5(m[k]*FR[k][1]),c=m[k]-a-b;
+      T[k]=[{t:MAIN[k],m:a},{t:AN[k],m:b},{t:EX[k],m:c}];
+    });
+  }else if(kind==="mock"){
+    T.L=[{t:"Mock: to'liq Listening testi (40 daq), imtihon sharoitida",m:40},{t:"Xatolar tahlili: dalil, sabab va tur bo'yicha (Part 3 va Part 4 ni alohida sanang)",m:50}];
+    T.R=[{t:"Mock: to'liq Reading testi (60 daq)",m:60},{t:"Xatolar tahlili: T/F/NG, matching va Passage 2-3 bo'yicha alohida sanang",m:50}];
+    T.W=[{t:"Mock: Task 1 (20 daq) + Task 2 (40 daq)",m:60},{t:"Task 2 ni namuna bilan solishtiring, 3 ta zaif joyni belgilang",m:30}];
+    T.S=[{t:"Mock: to'liq Speaking (Part 1-3) yozib oling, taxminan 15 daq",m:15},{t:"Yozuvni qayta tinglab, 3 ta asosiy zaif joyni yozing va tuzating",m:45}];
+  }else if(kind==="light"){
+    T.L=[{t:"Xato daftaridan Part 3/4 xatolarini qayta ko'ring + 1 ta Section 3",m:45}];
+    T.R=[{t:"T/F/NG va matching xatolarini qayta ko'ring + 1 ta passage",m:45}];
+    T.W=[{t:"Task 2 shablonini qayta ko'ring, 1 ta reja yozing (to'liq insho emas)",m:45}];
+    T.S=[{t:"Part 2 (2 ta) yengil + 10 ta chunkni takrorlash",m:45}];
+  }else{
+    T.L=[{t:"10 daqiqa tinglash + xato daftariga ko'z yugurtirish",m:20}];
+    T.R=[{t:"Xato daftariga ko'z yugurtirish, savol turi qoidalarini takrorlash",m:20}];
+    T.W=[{t:"Task 2 shabloni va iboralarga ko'z yugurtirish (yozmang)",m:20}];
+    T.S=[{t:"Part 2 (1 ta) isitish, 20 daqiqadan oshirmang. Erta yoting",m:30}];
+  }
+  // Daily plan requested by the user. Keep the existing visual design and colors unchanged.
+  m={L:145,R:140,W:(n%2===1?85:65),S:65};
+  T={
+    L:[
+      {t:"Listening Part 3 + Part 4: vaqt bilan ishlash",m:50},
+      {t:"Part 3/4 deep analysis: transcript, paraphrase va har bir xatoning sababi",m:35},
+      {t:"Shadowing: audio bilan birga gapirish, talaffuz va rhythm",m:20},
+      {t:"Dictation: eshitgan gaplarni yozish va transcript bilan tekshirish",m:20},
+      {t:"TED-Ed video: avval tinglash, keyin asosiy fikrlarni qayd etish",m:20}
+    ],
+    R:[
+      {t:"Reading Passage 2 + Passage 3: savollarni vaqt bilan yechish",m:60},
+      {t:"Passage 2/3 analysis: dalil jumlasi, paraphrase va xato sababi",m:35},
+      {t:"DEEP ANALYSIS ARTICLE: maqolani chuqur o‘qish, paragraph main idea, argument va 8–10 collocation",m:45}
+    ],
+    W:[
+      {t:"Task 2 sample analysis: Band 7+ namuna, structure, ideas, grammar va collocation (30 daqiqa)",m:30},
+      {t:"Task 2 independent essay: 40 daqiqada yozish + qisqa self-check (faqat belgilangan 20 kun)",m:((n<=30 && n%3!==0)?40:0)},
+      {t:"Writing translation: 1 ta mashq, collocation va grammar bilan tekshirish (20 daqiqa)",m:20}
+    ],
+    S:[
+      {t:"Speaking Part 1: 2 ta savolga javob + recording",m:10},
+      {t:"Speaking Part 2: 2 ta cue card javobi + recording",m:20},
+      {t:"Speaking Part 3: 2 ta savolga kengaytirilgan javob + recording",m:15},
+      {t:"Sesame AI speaking practice: har kuni 20 daqiqa",m:20}
+    ]
+  };
+  if(n%2===1)T.W.push({t:"Writing Task 1: report yozish va overview/body tekshirish (toq kunlar)",m:25});
+  T.W=T.W.filter(function(task){return task.m>0;});
+
+  // Full Listening + Reading mocks on odd-numbered study days (1, 3, 5, ... 29). Day 31 is reserved for light pre-exam review.
+  // On those days, the regular Part/P​​assage practice is replaced by a full timed test;
+  // analysis and the other daily tasks remain in place.
+  var isFullMockDay=(n%2===1 && n<=29);
+  if(isFullMockDay){
+    m.L=135;
+    T.L[0]={t:"FULL LISTENING MOCK: 40 savol, imtihon sharoitida (40 daqiqa)",m:40};
+    T.L[1]={t:"Full Listening mock tahlili: transcript, paraphrase va har bir xatoning sababi",m:35};
+    T.R[0]={t:"FULL READING MOCK: 3 passage, 40 savol, imtihon sharoitida (60 daqiqa)",m:60};
+    T.R[1]={t:"Full Reading mock tahlili: dalil jumlalari, paraphrase va xatolarni savol turi bo‘yicha tekshirish",m:35};
+  }
+  // Recalculate block durations from the actual task list so the timetable matches the edited plan.
+  ["L","R","W","S"].forEach(function(k){
+    m[k]=T[k].reduce(function(sum,task){return sum+task.m;},0);
+  });
+  var wake=wakeOf(n),B=[];
+  var A=wake+30;
+  B=[{k:"L",l:SK.L,s:A,d:m.L},{k:"R",l:SK.R,s:A+m.L+30,d:m.R},{k:"W",l:SK.W,s:960,d:m.W},{k:"S",l:SK.S,s:960+m.W+30,d:m.S}];
+  var tot=m.L+m.R+m.W+m.S;
+  cache[n]={n:n,kind:kind,m:m,T:T,B:B,wake:wake,tot:tot};
+  return cache[n];
+}
+
+var EXAM_ITEMS=[
+"Hujjat va kerakli narsalar kechadan tayyor",
+"Imtihon markaziga erta yetib boring, nonushta qiling",
+"Listening: audio 1 marta, savollarni oldindan o'qib boring",
+"Reading: Passage 1 ga 17, Passage 2 ga 20, Passage 3 ga 23 daqiqa",
+"Writing: avval Task 1 (20 daq), keyin Task 2 (5 reja, 30 yozuv, 5 tekshiruv)",
+"Speaking: Part 2 da to'xtamang, xato qilsangiz davom eting"
+];
+
+/* ---------- state ---------- */
+var LS="ielts31-v1";
+var S={c:{},m:{},n:{}};
+try{var x=JSON.parse(localStorage.getItem(LS)||"null");if(x&&x.c)S={c:x.c||{},m:x.m||{},n:x.n||{}};}catch(e){}
+var dbDoc=null,saveTimer=null,saving=false;
+function persist(){
+  try{localStorage.setItem(LS,JSON.stringify(S));}catch(e){}
+  if(!dbDoc)return;
+  clearTimeout(saveTimer);saveTimer=setTimeout(flush,700);
+}
+function flush(){
+  if(saving){saveTimer=setTimeout(flush,300);return;}
+  saving=true;
+  dbDoc.set({c:S.c,m:S.m,n:S.n,t:Date.now()}).catch(function(){}).then(function(){saving=false;});
+}
+function key(n,k,i){return "d"+n+"-"+k+i;}
+function isOn(k){return !!S.c[k];}
+function doneMin(p){
+  var s=0;["L","R","W","S"].forEach(function(k){p.T[k].forEach(function(t,i){if(isOn(key(p.n,k,i)))s+=t.m;});});
+  return s;
+}
+function totals(){
+  var d=0,t=0;
+  for(var n=1;n<=31;n++){var p=mk(n);d+=doneMin(p);t+=p.tot;}
+  return {done:d,tot:t};
+}
+function streak(tn){
+  var n=Math.min(tn,31);if(n<1)return 0;
+  var s=0;
+  if(doneMin(mk(n))<180)n--;
+  while(n>=1&&doneMin(mk(n))>=180){s++;n--;}
+  return s;
+}
+
+/* ---------- views ---------- */
+var view="day";
+var sel=Math.min(Math.max(todayNum(),1),32);
+var app=document.getElementById("app"),topEl=document.getElementById("top"),tabsEl=document.getElementById("tabs");
+var TABS=[["day","Kun"],["plan","Reja"],["tech","Texnika"],["mock","Mock"],["goal","Maqsad"],["rules","Intizom"]];
+
+function renderTop(){
+  var st=totals(),left=daysLeft(),tn=todayNum();
+  var sk=streak(tn);
+  topEl.innerHTML='<div><p class="eyebrow">IELTS, 19-noyabr 2026</p><h1><em>'+left+'</em> kun qoldi</h1></div>'+
+    '<div class="stat"><span class="mono">'+fmtH(st.done)+' / '+fmtH(st.tot)+'</span><span class="lbl">bajarildi · ketma-ket minimum kun: '+sk+'</span></div>'+
+    '<div class="backup-actions"><button class="btn ghost" data-act="backup">Progressni saqlab olish</button><button class="btn ghost" data-act="restore">Backupni yuklash</button><input id="restore-file" type="file" accept="application/json,.json" hidden></div>';
+}
+function renderTabs(){
+  tabsEl.innerHTML=TABS.map(function(t){
+    return '<button class="tab" role="tab" data-act="tab" data-v="'+t[0]+'" aria-selected="'+(view===t[0])+'">'+t[1]+'</button>';
+  }).join("");
+}
+
+function taskHtml(n,k,t,i){
+  var id=key(n,k,i),on=isOn(id),txt=t.t.toLowerCase();
+  // 1-daraja: core skill practice, mock/section analysis, actual writing output and speaking recording.
+  var p1=(/full listening mock|full reading mock|mock: to'liq listening|mock: to'liq reading|xatolar tahlili|deep analysis:|deep analysis article|passage 2 \+ passage 3|listening part 3 \+ part 4|task 2 independent essay|writing task 1: report yozish|speaking part 1:|speaking part 2:|speaking part 3:|sesame ai speaking practice/.test(txt));
+  var badge=p1?'<span class="prio p1">1-DARAJA · MUHIM</span>':'<span class="prio p2">2-DARAJA · QO‘SHIMCHA</span>';
+  return '<label class="task'+(on?" done":"")+'"><input type="checkbox" data-act="chk" data-k="'+id+'"'+(on?" checked":"")+'><span class="tt">'+badge+t.t+'</span><span class="mm">'+t.m+' daq</span></label>';
+}
+
+function dayView(n){
+  if(n===32)return examView();
+  if(n===31){ return '<div class="daybar"><button class="btn ghost" data-act="nav" data-d="-1">‹ Oldingi</button><button class="btn ghost" data-act="today">Bugun</button></div><div class="daytitle"><h2>31-kun · Imtihon oldi</h2><span class="date">18-noy</span></div><p class="phase">Yangi test ishlamang. Yengil takrorlash, hujjatlarni tayyorlash va vaqtida uxlash.</p><section class="habits"><h3>1-daraja · shart</h3><label class="task"><input type="checkbox" data-act="chk" data-k="d31-rest1"><span class="tt">Xato daftaridagi eng muhim xatolarni 20–30 daqiqa ko‘rib chiqish</span></label><label class="task"><input type="checkbox" data-act="chk" data-k="d31-rest2"><span class="tt">Imtihon hujjatlari, yo‘l va kerakli narsalarni tayyorlash</span></label><label class="task"><input type="checkbox" data-act="chk" data-k="d31-rest3"><span class="tt">Yengil Speaking warm-up, ko‘pi bilan 10 daqiqa</span></label><label class="task"><input type="checkbox" data-act="chk" data-k="d31-rest4"><span class="tt">Kamida 7–8 soat uxlash</span></label></section>'; }
+  var p=mk(n),done=doneMin(p),pct=Math.round(done/p.tot*100),ph=phaseOf(n),tn=todayNum();
+  var tags="";
+  if(n===tn)tags+=' <span class="pill pen">bugun</span>';
+  if(p.kind==="mock")tags+=' <span class="pill pen">mock</span>';
+  if(p.kind==="light"||p.kind==="rest")tags+=' <span class="pill">yengil kun</span>';
+  var h='<div class="daybar"><button class="btn ghost" data-act="nav" data-d="-1"'+(n<=1?" disabled":"")+'>‹ Oldingi</button>'+
+    '<button class="btn ghost" data-act="today">Bugun</button>'+
+    '<button class="btn ghost" data-act="nav" data-d="1">Keyingi ›</button></div>';
+  h+='<div><div class="daytitle"><h2>'+n+'-kun</h2><span class="date">'+wdl(n)+', '+dlabel(n)+'</span>'+tags+'</div><p class="phase">'+ph.t+'</p></div>';
+  var minOk=done>=180;
+  h+='<p class="note"><strong>1-DARAJA · MUHIM:</strong> Full Mock/section va tahlil, mustaqil Writing, Speaking recording va Sesame. <strong>2-DARAJA · QO‘SHIMCHA:</strong> TED-Ed, article, shadowing, dictation, translation va sample analysis. Vaqt qisqarsa, avval 1-darajani tugating.</p>';
+  h+='<div class="meter"><div class="meter-top"><span class="mono">'+fmt(done)+' / '+fmt(p.tot)+'</span>'+
+    (minOk?'<span class="pill good">minimum bajarildi</span>':'<span class="pill">minimum: 3 soat ('+fmt(180-done)+' qoldi)</span>')+'</div>'+
+    '<div class="track"><div class="fill" style="width:'+pct+'%"></div></div></div>';
+  if(n<=3)h+='<p class="note">Yengil boshlanish: bugun '+fmt(p.tot)+'. Maqsad natija emas, rejimni boshlash. Soatni oshirmang.</p>';
+  if(p.kind==="mock")h+='<p class="note">Mock imtihon sharoitida: telefon boshqa xonada, ruxsat etilgan narsalargina stol ustida, tanaffussiz. Ballarni Mock bo\'limiga kiriting.</p>';
+  if(n>=27&&p.kind!=="mock")h+='<p class="note">Imtihon vaqtiga moslashish: uyg\'onish '+hhmm(p.wake)+'. Uyqu kamida 7 soat: '+hhmm((p.wake-420+1440)%1440)+' gacha yoting.</p>';
+  else h+='<p class="note">Uyg\'onish: '+hhmm(p.wake)+'. Budilnik xona narigi chetida, telefon bloklar paytida boshqa xonada.</p>';
+  h+='<div class="sched">'+p.B.map(function(b){
+    var c=b.k==="M"?"var(--pen)":"var(--"+b.k+")";
+    return '<div><span class="tm">'+hhmm(b.s)+' – '+hhmm(b.s+b.d)+'</span><span class="sk"><span class="dot" style="--c:'+c+'"></span>'+b.l+'</span><span class="du">'+fmt(b.d)+'</span></div>';
+  }).join("")+'</div>';
+  ["L","R","W","S"].forEach(function(k){
+    var sm=0,sd=0;p.T[k].forEach(function(t,i){sm+=t.m;if(isOn(key(n,k,i)))sd+=t.m;});
+    h+='<section class="sec '+k+'"><div class="sec-h"><h3><span class="chip">'+k+'</span>'+SK[k]+'</h3><span class="du mono">'+sd+' / '+sm+' daq</span></div>'+
+      p.T[k].map(function(t,i){return taskHtml(n,k,t,i);}).join("")+'</section>';
+  });
+  var HB=["Reja vaqtida turdim","Bloklar paytida telefon boshqa xonada edi","Ertangi birinchi vazifani yozib qo'ydim"];
+  h+='<section class="habits"><h3>Kunlik odatlar</h3>'+HB.map(function(t,i){
+    var id="d"+n+"-h"+i,on=isOn(id);
+    return '<label class="task'+(on?" done":"")+'"><input type="checkbox" data-act="chk" data-k="'+id+'"'+(on?" checked":"")+'><span class="tt">'+t+'</span><span class="mm"></span></label>';
+  }).join("")+'</section>';
+  h+='<label class="f" for="note">Bugun nima chalg\'itdi?<textarea id="note" data-act="note" placeholder="Masalan: Telegram, kechikib turish, charchoq. Bitta jumla yetarli.">'+esc(S.n[n]||"")+'</textarea></label>';
+  return h;
+}
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+
+function examView(){
+  var h='<div class="daybar"><button class="btn ghost" data-act="nav" data-d="-1">‹ Oldingi</button><button class="btn ghost" data-act="today">Bugun</button><span></span></div>';
+  h+='<div><div class="daytitle"><h2>Imtihon kuni</h2><span class="date">Pay, 19-noy</span><span class="pill pen">imtihon</span></div><p class="phase">Yangi narsa o\'rganmang. Rejaga ishoning.</p></div>';
+  h+='<section class="habits"><h3>Tekshiruv ro\'yxati</h3>'+EXAM_ITEMS.map(function(t,i){
+    var id="d32-x"+i,on=isOn(id);
+    return '<label class="task'+(on?" done":"")+'"><input type="checkbox" data-act="chk" data-k="'+id+'"'+(on?" checked":"")+'><span class="tt">'+t+'</span><span class="mm"></span></label>';
+  }).join("")+'</section>';
+  return h;
+}
+
+function planView(){
+  var tn=todayNum(),h="",last=0;
+  for(var n=1;n<=32;n++){
+    var ph=n===31?{i:4,t:"Imtihon oldi: yengil takrorlash",d:"18-noyabr: dam olish va xato daftarini ko‘rish"}:n===32?{i:5,t:"Imtihon",d:"19-noyabr"}:phaseOf(n);
+    if(ph.i!==last){
+      if(last)h+='</div>';
+      h+='<div class="ph"><h3>'+ph.t+'</h3><p>'+ph.d+'</p></div><div class="list">';
+      last=ph.i;
+    }
+    if(n===31){
+      h+='<button class="row'+(n===tn?" today":"")+'" data-act="open" data-n="31"><span class="n">31</span><span class="d"><b>'+wdl(31)+', '+dlabel(31)+'</b><span>Imtihon oldi · yengil takrorlash</span><span class="mini"><i style="width:0%"></i></span></span><span class="h">—</span></button>';
+      continue;
+    }
+    if(n===32){
+      h+='<button class="row'+(tn>=32?" today":"")+'" data-act="open" data-n="32"><span class="n">32</span><span class="d"><b>Imtihon kuni</b><span>Pay, 19-noyabr</span></span><span class="h">—</span></button>';
+      continue;
+    }
+    var p=mk(n),d=doneMin(p),pc=Math.round(d/p.tot*100);
+    var tg=p.kind==="mock"?"mock · ":(p.kind==="light"||p.kind==="rest")?"yengil · ":"";
+    h+='<button class="row'+(n===tn?" today":"")+'" data-act="open" data-n="'+n+'"><span class="n">'+n+'</span>'+
+       '<span class="d"><b>'+wdl(n)+', '+dlabel(n)+'</b><span>'+tg+fmtH(p.tot)+' reja</span><span class="mini"><i style="width:'+pc+'%"></i></span></span>'+
+       '<span class="h">'+pc+'%</span></button>';
+  }
+  h+='</div>';
+  return h;
+}
+
+function techView(){
+  var sec=[
+  {c:"L",t:"Listening: Part 3 va Part 4",b:[
+    ["Part 3: savollar va variantlar",
+     "<ul><li>Audio boshlanishidan oldingi 30 soniyada savollarni o'qing, har variantdan 1-2 kalit so'zni chizing.</li><li>Spikerlar odatda birinchi aytgan variantni rad etadi. <b>but, actually, in fact, I thought</b> so'zlaridan keyin to'g'ri javob keladi.</li><li>Ikki-uch spiker bo'lsa, ismlarni savol yoniga yozib qo'ying: kim nima dedi.</li><li>Matching: ro'yxatdagi so'zlarni sinonim sifatida eslab turing, audioda aynan o'sha so'z kelmaydi.</li><li>Bir javobni o'tkazib yuborsangiz, o'sha joyda qolmang. Keyingi savolga o'ting, oxirida taxmin qilasiz.</li></ul>"],
+    ["Part 4: monolog",
+     "<ul><li>Sarlavhadan mavzuni oling, bo'sh joyga qaysi tur (son, ot, sifat) kelishini oldindan taxmin qiling.</li><li>So'z cheklovini tekshiring (NO MORE THAN TWO WORDS) va imloga e'tibor bering: ko'plik, -s, ikki harf.</li><li>Signal so'zlarni tinglang: firstly, another, however, as a result. Ular keyingi javob oldidan keladi.</li><li>Audio tez bo'lsa, faqat kalit so'zni yozing, to'liq gap emas.</li></ul>"],
+    ["Xato daftari (har kuni)",
+     "<p>Har xato uchun uchta ustun: <b>nima eshitdim</b>, <b>to'g'ri javob</b>, <b>nega adashdim</b> (lug'at, e'tibor, tuzoq, tezlik). Hafta oxirida eng ko'p uchragan sababni topib, keyingi haftada shunga mashq qiling.</p>"]
+  ]},
+  {c:"R",t:"Reading: Passage 2-3, matching, T/F/NG",b:[
+    ["True / False / Not Given",
+     "<ul><li><b>TRUE</b>: matn xuddi shu ma'noni (sinonim bilan) aytadi. <b>FALSE</b>: matn qarama-qarshisini aytadi. <b>NOT GIVEN</b>: mavzu matnda bor, lekin aynan shu da'vo yo'q.</li><li>Asosiy qoida: dalil jumlasini qalamda ko'rsata olmasangiz, bu NOT GIVEN.</li><li>Savollar matn tartibida keladi. Birinchi javobni topgach, keyingisi undan pastda bo'ladi.</li><li>Ehtiyot so'zlar: all, only, always, never, mainly. Matnda some yoki often bo'lsa, javob FALSE yoki NOT GIVEN bo'lishi mumkin.</li><li>Har savolga 1 daqiqadan ko'p sarflamang.</li></ul>"],
+    ["Matching headings",
+     "<ul><li>Har paragrafning asosiy g'oyasini 3 so'zda yozing (odatda birinchi va oxirgi jumlada bo'ladi).</li><li>Keyin sarlavhalarga qarang. Paragrafda faqat bitta misol yoki detal bo'lsa, u sarlavha emas.</li><li>Bir paragrafga 2 daqiqadan ko'p vaqt ketkazmang, qoldirib keyin qaytasiz.</li></ul>"],
+    ["Matching names va features",
+     "<ul><li>Ismlarni matnda aylantirib belgilang, har birining fikrini bir so'z bilan yozing.</li><li>Variantlarni sinonimga aylantiring. Javoblar matn tartibida bo'lmasligi mumkin.</li></ul>"],
+    ["Passage 2 va 3 uchun vaqt",
+     "<ul><li>Reja: Passage 1 ga 17, Passage 2 ga 20, Passage 3 ga 23 daqiqa.</li><li>Avval 2 daqiqada skim qiling (sarlavha, birinchi jumlalar), keyin savollarga o'ting. Hamma so'zni o'qib chiqmang.</li><li>Tushunmagan so'z chiqsa to'xtamang. Ko'pincha javob u so'zga bog'liq emas.</li></ul>"]
+  ]},
+  {c:"W",t:"Writing Task 2: nimani yozishni bilmaslik",b:[
+    ["G'oya topish formulasi",
+     "<p>Har mavzuda 3 ta savol bering:</p><ul><li><b>Kim?</b> (shaxs, oila, hukumat, kompaniya, jamiyat)</li><li><b>Qachon?</b> (hozir yoki uzoq muddatda)</li><li><b>Qaysi soha?</b> (iqtisod, sog'liq, ta'lim, atrof-muhit, texnologiya)</li></ul><p>Ikkita body paragraf uchun eng tanish ikki sohani tanlang. Ajoyib g'oya kerak emas, tushunarli va rivojlantirilgan g'oya kerak.</p>"],
+    ["4 paragraf tuzilmasi",
+     "<ol><li><b>Kirish</b>: savolni o'z so'zingiz bilan qayta yozing + javobingiz (2 gap).</li><li><b>Body 1</b> va <b>Body 2</b>: har biri 5-6 gap.</li><li><b>Xulosa</b>: 2 gap, yangi g'oya qo'shmang.</li></ol><p>Hajm: 250-280 so'z. Iboralarni yodlang, butun inshoni emas.</p>"],
+    ["Body paragraf formulasi (PEEL)",
+     "<ul><li><b>Point</b>: asosiy fikr (1 gap)</li><li><b>Explain</b>: nega shunday (2 gap)</li><li><b>Example</b>: aniq misol (1-2 gap)</li><li><b>Link</b>: savolga qaytish (1 gap)</li></ul>"],
+    ["Savol turiga qarab",
+     "<ul><li><b>Opinion</b>: bitta aniq pozitsiya tanlang va ikkala body'da shuni asoslang.</li><li><b>Discussion</b>: Body 1 = bir fikr, Body 2 = ikkinchi fikr, kirishda o'z fikringiz.</li><li><b>Advantages/Disadvantages</b>: Body 1 afzalliklar, Body 2 kamchiliklar.</li><li><b>Problem/Solution</b>: Body 1 muammolar, Body 2 yechimlar.</li><li><b>Two-part</b>: har savolga alohida body.</li></ul>"],
+    ["Vaqt (40 daqiqa)",
+     "<p>5 daqiqa reja (g'oyalar va misollar), 30 daqiqa yozish, 5 daqiqa tekshirish. Rejasiz boshlamang.</p>"]
+  ]},
+  {c:"S",t:"Speaking: 5,5-6 dan chiqish",b:[
+    ["Part 2 (2 daqiqa)",
+     "<ul><li>1 daqiqada 4 ta so'rov so'zini (nima, qayerda, kim, nega) yozing.</li><li>Tuzilma: kirish, 3 ta detal, oxirida nega muhimligi/his.</li><li>To'xtab qolsangiz sukut qilmang: <b>Let me think...</b>, <b>What I mean is...</b> deb davom eting.</li></ul>"],
+    ["Part 3 formulasi",
+     "<p>Fikr, sabab, misol, qarama-qarshi tomon. 3-4 gap, taxminan 20-30 soniya. So'z yetishmasa: <b>I'd say that...</b>, <b>For many people...</b>, <b>In general...</b></p>"],
+    ["Fluency va grammatika",
+     "<ul><li>Xato qilsangiz davom eting, o'zingizni bir marta tuzating, keyin yo'lni davom ettiring.</li><li>Lug'at yaxshi bo'lsa, o'sish grammatik aniqlik va fikrni rivojlantirishdan keladi: present perfect, shart gaplar (if), relative clauses. Har kuni shu tuzilmalarda 5 ta gap yozing.</li></ul>"],
+    ["Yozish, tinglash, qayta urinish",
+     "<p>Part 2 ni yozib oling, qayta tinglab bitta xato turini tuzating va xuddi shu savolga ikkinchi marta javob bering. Haftada kamida 3 marta shunday qiling.</p>"]
+  ]}];
+  return sec.map(function(s){
+    return '<section class="card sec '+s.c+'" style="border-color:var(--ink)"><h2 style="display:flex;gap:10px;align-items:center"><span class="chip">'+s.c+'</span>'+s.t+'</h2>'+
+      s.b.map(function(b,i){return '<details'+(i===0?" open":"")+'><summary>'+b[0]+'</summary>'+b[1]+'</details>';}).join("")+'</section>';
+  }).join("");
+}
+
+function overall(v){
+  if(!v)return null;
+  var a=["L","R","W","S"].map(function(k){return parseFloat(String(v[k]).replace(",","."));});
+  if(a.some(function(x){return isNaN(x);}))return null;
+  return Math.round(a.reduce(function(p,c){return p+c;},0)/4*2)/2;
+}
+var BASE={L:6,R:6,W:6,S:6};
+var MROWS=[["m1","20-okt","6,0-6,5"],["m2","27-okt","6,5"],["m3","3-noy","6,5-7,0"],["m4","10-noy","7,0"]];
+
+function mockView(){
+  var rows='<tr><td>Boshlang\'ich (oxirgi mock)</td>'+["L","R","W","S"].map(function(k){return '<td class="mono">'+BASE[k].toFixed(1)+'</td>';}).join("")+'<td class="ovr">6.0</td><td class="mono">—</td></tr>';
+  MROWS.forEach(function(r){
+    var v=S.m[r[0]]||{};
+    rows+='<tr><td>'+r[1]+'</td>'+["L","R","W","S"].map(function(k){
+      return '<td class="mono"><input type="number" inputmode="decimal" step="0.5" min="0" max="9" id="in-'+r[0]+k+'" data-act="mock" data-id="'+r[0]+'" data-s="'+k+'" value="'+(v[k]!==undefined?esc(v[k]):"")+'" aria-label="'+r[1]+' '+SK[k]+'"></td>';
+    }).join("")+'<td class="ovr" id="ov-'+r[0]+'">'+fmtOv(overall(v))+'</td><td class="mono">'+r[2]+'</td></tr>';
+  });
+  rows+='<tr><td><b>Real maqsad</b></td><td class="mono">7.5</td><td class="mono">7.0</td><td class="mono">6.5</td><td class="mono">6.5</td><td class="ovr">7.0</td><td class="mono"></td></tr>';
+  return '<section class="card"><h2>Mock natijalari</h2><p class="q">Ballarni mockdan keyin kiriting, umumiy ball IELTS qoidasi bo\'yicha 0,5 ga yaxlitlanadi. Writing va Speaking ni o\'zingiz baholasangiz, ular 0,5 ga adashishi mumkin. Haftada bir marta o\'qituvchi yoki tajribali kishiga ko\'rsating.</p>'+
+    '<div class="tw"><table><thead><tr><th>Sana</th><th class="mono">L</th><th class="mono">R</th><th class="mono">W</th><th class="mono">S</th><th class="mono">Overall</th><th class="mono">Kutilgan</th></tr></thead><tbody>'+rows+'</tbody></table></div>'+
+    '<div id="gauge">'+gaugeHtml()+'</div></section>'+
+    '<section class="card"><h3>Har mockdan keyin</h3><ul><li>Eng past ikki bo\'limni toping.</li><li>Keyingi haftada o\'sha ikki bo\'limga +20 daqiqa bering, eng baland bo\'limdan -20 daqiqa oling. Umumiy soat o\'zgarmaydi.</li><li>Xato turlarini qayta sanang, eng ko\'p xato turi kelasi haftaning birinchi mashqi bo\'lsin.</li></ul></section>';
+}
+function fmtOv(v){return v===null?"—":v.toFixed(1);}
+function gaugeHtml(){
+  var last=null;
+  MROWS.forEach(function(r){var o=overall(S.m[r[0]]);if(o!==null)last=o;});
+  function pos(x){return Math.max(0,Math.min(100,(x-5)/3*100));}
+  var h='<div class="gauge"><div class="gt"></div><div class="tg" style="left:'+pos(7)+'%"></div><div class="tl" style="left:'+pos(7)+'%">7.0</div>'+
+    '<div class="mk" style="left:'+pos(6)+'%" title="Boshlang\'ich 6.0"></div>';
+  if(last!==null)h+='<div class="mk on" style="left:'+pos(last)+'%" title="Oxirgi mock"></div>';
+  [5,5.5,6,6.5,7,7.5,8].forEach(function(x){h+='<div class="sc" style="left:'+pos(x)+'%">'+x.toFixed(1)+'</div>';});
+  return h+'</div><p class="q">Bo\'sh doira: boshlang\'ich 6.0. To\'ldirilgan doira: oxirgi mock'+(last!==null?" ("+last.toFixed(1)+")":" (hali kiritilmagan)")+'. Qizil chiziq: 7.0.</p>';
+}
+
+function goalView(){
+  return '<section class="card"><h2>Bir oyda +1 yoki +1,5 mumkinmi?</h2>'+
+  '<p><b>+1 (overall 7.0) mumkin, lekin kafolat yo\'q. +1,5 (overall 7.5) amalda real emas.</b></p>'+
+  '<p>Overall 7.0 uchun to\'rt bo\'limning o\'rtachasi kamida 6,75 bo\'lishi kerak. Hozir hammasi 6, ya\'ni har bo\'lim o\'rtacha +0,75 o\'sishi shart. Hammasini baravar o\'stirish shart emas.</p>'+
+  '<div class="tw"><table><thead><tr><th>Bo\'lim</th><th class="mono">Hozir</th><th class="mono">Real yo\'l</th><th class="mono">Nima uchun</th></tr></thead><tbody>'+
+  '<tr><td>Listening</td><td class="mono">6.0</td><td class="mono">7.5</td><td>texnika + xato turlari</td></tr>'+
+  '<tr><td>Reading</td><td class="mono">6.0</td><td class="mono">7.0</td><td>T/F/NG, matching</td></tr>'+
+  '<tr><td>Writing</td><td class="mono">6.0</td><td class="mono">6.5</td><td>shablon + hajm</td></tr>'+
+  '<tr><td>Speaking</td><td class="mono">6.0</td><td class="mono">6.5</td><td>fluency + grammatika</td></tr>'+
+  '<tr><td><b>Overall</b></td><td class="mono">6.0</td><td class="ovr">6,875 → 7.0</td><td></td></tr></tbody></table></div></section>'+
+  '<section class="card"><h3>Nega mumkin</h3><ul>'+
+  '<li>Listening va Reading dagi xatolaringiz aniq turlarda (Part 3-4, T/F/NG, matching). Bu texnika va mashq bilan bir oyda yopiladi.</li>'+
+  '<li>Mashqlar xato daftari va vaqtli testlar bilan qurilgan, sizga aynan o\'sha tur kerak.</li>'+
+  '<li>Reja 19-oktyabrda boshlanadi, 30 kunlik o‘qish 17-noyabrda tugaydi; 18-noyabr yengil kun, imtihon 19-noyabr.</li></ul>'+
+  '<h3>Nega qiyin</h3><ul>'+
+  '<li>Writing va Speaking til darajasiga (grammatik aniqlik, fikr rivoji) bog\'liq, ular sekin o\'zgaradi. Bir oyda +0,5 ham mashq sifatiga bog\'liq.</li>'+
+  '<li>7.5 uchun o\'rtacha 7,25 kerak: masalan Listening va Reading ikkalasi 8.0 bo\'lishi lozim. Bir oyda +2 ball bunday sakrash odatiy emas.</li>'+
+  '<li>Mock ballaringiz taxminiy: ikki marta ham hammasi 6 chiqqan, aniq daraja 5,5-6,5 oralig\'ida bo\'lishi mumkin.</li>'+
+  '<li>Eng katta xavf bilim emas, hajm: hozir 2-3 soat qilinmoqda, rejaning kamida 80 foizi bajarilmasa 7.0 ehtimoli keskin pasayadi.</li></ul>'+
+  '<h3>Nimani nazorat qilasiz</h3><ul>'+
+  '<li>27-oktyabr mocki: Listening va Reading kamida 6,5 bo\'lmasa, Writing/Speaking vaqtidan 20 daqiqadan olib L/R ga bering.</li>'+
+  '<li>3-noyabr mocki: overall 6,5 dan past bo\'lsa, faqat zaif savol turlariga o\'ting, yangi material olmang.</li>'+
+  '<li>Imtihondan keyingi natijaga qarab maqsadni qayta baholaysiz. 6,5 ham 6 dan aniq yutuq.</li></ul></section>';
+}
+
+function rulesView(){
+  return '<section class="card"><h2>Intizom, irodasiz</h2><p class="q">Rejaning 2-3 soatga tushib ketishi odatda iroda yetmasligidan emas, reja va muhit mos kelmasligidan.</p><ol>'+
+  '<li><b>Kunlik minimum 3 soat.</b> Yomon kunda ham 1 ta Listening bloki, 1 ta Reading bloki, 20 daqiqa Speaking. Nol kun bo\'lmasin.</li>'+
+  '<li><b>Ertalab.</b> Budilnik xona narigi chetida. Ko\'z ochilgach 5 soniyada oyoq yerga. Bir stakan suv. Stol kechadan tayyor, birinchi vazifa yozilgan.</li>'+
+  '<li><b>Telefon.</b> Bloklar paytida boshqa xonada. Kompyuterda Telegram Web, YouTube va Instagram blokda.</li>'+
+  '<li><b>50 / 10.</b> 50 daqiqa ishlang, 10 daqiqa turib yuring. Tanaffusda telefonga o\'tirmang.</li>'+
+  '<li><b>Boshlash qiyin bo\'lsa.</b> Faqat 2 daqiqa ishlayman deng. Boshlagach davom etish osonlashadi.</li>'+
+  '<li><b>Uyqu.</b> Kamida 7 soat. 6:30 da turish uchun 23:00 da yoting. Oxirgi kunlarda uyg\'onishni rejadagi vaqtga surasiz.</li>'+
+  '<li><b>Javobgarlik.</b> Har kech bir kishiga (do\'st, o\'qituvchi) bugungi soatni yuboring.</li>'+
+  '<li><b>Haftalik tahlil.</b> Yakshanba kechqurun: nega kam bo\'ldi? Chalg\'ish yozuvlaringizdan eng ko\'p takrorlangan sababni toping va bitta chorasini belgilang.</li></ol></section>';
+}
+
+function render(focusKey){
+  renderTop();renderTabs();
+  var h="";
+  if(view==="day")h=dayView(sel);
+  else if(view==="plan")h=planView();
+  else if(view==="tech")h=techView();
+  else if(view==="mock")h=mockView();
+  else if(view==="goal")h=goalView();
+  else h=rulesView();
+  app.innerHTML=h;
+  if(focusKey){var el=app.querySelector('[data-k="'+focusKey+'"]');if(el)el.focus();}
+}
+
+function exportProgress(){
+  var payload={app:"IELTSEasy 30 kunlik reja",version:1,exportedAt:new Date().toISOString(),state:S};
+  var blob=new Blob([JSON.stringify(payload,null,2)],{type:"application/json"});
+  var url=URL.createObjectURL(blob),a=document.createElement("a");
+  a.href=url;a.download="ielts-progress-backup.json";document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url);
+}
+function importProgress(file){
+  if(!file)return;
+  var reader=new FileReader();
+  reader.onload=function(){
+    try{
+      var data=JSON.parse(reader.result),state=data.state||data;
+      if(!state||typeof state!=="object"||!state.c)throw new Error("Noto'g'ri backup");
+      S={c:state.c||{},m:state.m||{},n:state.n||{}};
+      persist();render();
+      alert("Progress backupdan tiklandi.");
+    }catch(e){alert("Backup faylini o'qib bo'lmadi. To'g'ri JSON backup faylini tanlang.");}
+  };
+  reader.readAsText(file);
+}
+
+/* ---------- events ---------- */
+document.addEventListener("click",function(e){
+  var t=e.target.closest("[data-act]");if(!t)return;
+  var a=t.getAttribute("data-act");
+  if(a==="backup"){exportProgress();}
+  else if(a==="restore"){var rf=document.getElementById("restore-file");if(rf)rf.click();}
+  else if(a==="tab"){view=t.getAttribute("data-v");render();window.scrollTo(0,0);}
+  else if(a==="nav"){sel=Math.min(32,Math.max(1,sel+parseInt(t.getAttribute("data-d"),10)));render();}
+  else if(a==="today"){sel=Math.min(Math.max(todayNum(),1),32);render();}
+  else if(a==="open"){sel=parseInt(t.getAttribute("data-n"),10);view="day";render();window.scrollTo(0,0);}
+});
+document.addEventListener("change",function(e){
+  var t=e.target;if(t&&t.id==="restore-file"){importProgress(t.files&&t.files[0]);t.value="";return;}
+  if(!t.getAttribute||t.getAttribute("data-act")!=="chk")return;
+  var k=t.getAttribute("data-k");
+  if(t.checked)S.c[k]=1;else delete S.c[k];
+  persist();render(k);
+});
+document.addEventListener("input",function(e){
+  var t=e.target;if(!t.getAttribute)return;
+  var a=t.getAttribute("data-act");
+  if(a==="note"){
+    if(t.value)S.n[sel]=t.value;else delete S.n[sel];
+    persist();
+  }else if(a==="mock"){
+    var id=t.getAttribute("data-id"),s=t.getAttribute("data-s");
+    S.m[id]=S.m[id]||{};
+    if(t.value==="")delete S.m[id][s];else S.m[id][s]=t.value;
+    persist();
+    var o=document.getElementById("ov-"+id);if(o)o.textContent=fmtOv(overall(S.m[id]));
+    var g=document.getElementById("gauge");if(g)g.innerHTML=gaugeHtml();
+  }
+});
+
+render();
+
+/* ---------- synced storage (db), falls back to this browser ---------- */
+(function(){
+  var cl=window.claude;if(!cl||!cl.use)return;
+  Promise.all([cl.use("db"),cl.use("user")]).then(function(r){
+    var db=r[0],user=r[1];if(!db||!user)return;
+    return user.id().then(function(id){
+      if(!id)return;
+      var ref=db.doc("data/users/"+id+"/tracker");
+      return ref.get().then(function(snap){
+        if(snap.exists){
+          var d=snap.data()||{};
+          S={c:d.c||{},m:d.m||{},n:d.n||{}};
+          try{localStorage.setItem(LS,JSON.stringify(S));}catch(e){}
+          dbDoc=ref;
+          var ae=document.activeElement;
+          if(!(ae&&ae.tagName==="TEXTAREA"))render();
+        }else{
+          dbDoc=ref;
+          if(Object.keys(S.c).length||Object.keys(S.m).length||Object.keys(S.n).length)persist();
+        }
+      });
+    });
+  }).catch(function(){});
+})();
+})();
+</script>
+
+</body></html>
